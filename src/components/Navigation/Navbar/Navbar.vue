@@ -61,7 +61,7 @@
 import {ref} from 'vue';
 import Logo from '../Logo.vue';
 import Search from '../Search.vue';
-import Notifications from '../Notification.vue';
+import Notifications from '../Notifications.vue';
 import UserStatus from '../UserStatus.vue';
 import ProfileDropdown from '../ProfileDropdown.vue';
 

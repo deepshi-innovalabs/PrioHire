@@ -8,7 +8,7 @@
   font-weight: 400;
 
   /* Remove color-scheme if unnecessary */
-  color: #213547; /* Darker color for text in light mode */
+  /* color: #213547; Darker color for text in light mode */
   background-color: #ffffff; /* Light background as default */
 
   font-synthesis: none;
@@ -25,11 +25,23 @@ a {
 a:hover {
   color: #535bf2;
 }
-
-body {
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #ffffff; /* Light background for the body */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1 {
@@ -66,16 +78,3 @@ button:focus-visible {
   border: 1px solid transparent;
 }
 
-/* DARK MODE - Use Tailwind's dark mode feature */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: rgba(255, 255, 255, 0.87); /* Light text for dark mode */
-    background-color: #242424; /* Dark background for dark mode */
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #1a1a1a; /* Dark button background */
-  }
-}
