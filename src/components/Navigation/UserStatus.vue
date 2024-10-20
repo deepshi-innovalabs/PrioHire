@@ -1,19 +1,26 @@
 <template>
 <div class="dropdown dropdown-end">
-  <label tabindex="0" class="btn btn-outline">Change Status</label>
+  <label tabindex="0" class="cursor-pointer px-4 py-2 rounded-md border-2 border-gray-300">{{selectedOption || 'Change Status'}}</label>
   <ul tabindex="0" class="dropdown-content menu p-1 shadow bg-base-100 rounded-box w-60">
     <!-- Ready to Interview -->
     <li class="rounded-lg" v-for="option in options">
-      <UserStatusItem
-      :icon="option.icon" 
-          :description="option.description"  
-          :status="option.status"/>
+      <DropdownOptionItem
+      :key="option.status"
+      :title="option.status"
+      v-model="selectedOption"
+      :message="option.description"
+      :icon="option.icon"
+      :showIcon="true"
+      :showTime="false"
+          />
     </li>
   </ul>
 </div>
 </template>
 <script setup>
-import UserStatusItem from './UserStatus/UserStatusItem.vue'
+import { ref } from 'vue';
+import DropdownOptionItem from '../Common/DropdownOptionItem.vue';
+const selectedOption = ref('');
 const options = [
   {
     id: 1,
